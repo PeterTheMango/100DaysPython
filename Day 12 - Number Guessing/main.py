@@ -1,5 +1,5 @@
-from art import logo
 from random import randint
+from art import logo
 
 HARD_LIVES = 5
 EASY_LIVES = 10
@@ -7,13 +7,9 @@ EASY_LIVES = 10
 def clear():
     for i in range(1000):
         print('\n')
-    return
 
 def GuessNumber(num, answer):
-    if num != answer:
-        return False
-    else:
-        return True
+   return num != answer
 
 def PlayGame():
     print(logo)
@@ -66,10 +62,7 @@ while start != 'y' and start != 'n':
     print("Error: That is an invalid answer.")
     start = input("Would you like to play guess the number? Type 'y' or 'n': ").lower()
 
-if start == "y":
-    runningGame = True
-else:
-    runningGame = False
+runningGame = start == "y"
 
 while runningGame:
     clear()
@@ -78,9 +71,6 @@ while runningGame:
     while start != 'y' and start != 'n':
         print("Error: That is an invalid answer.")
         start = input("Would you like to play another round? Type 'y' or 'n': ").lower()
-    if start == "y":
-        runningGame = True
-    else:
-        runningGame = False
+    runningGame = start == "y"
 
 print("Game Done! Exiting Now!")
