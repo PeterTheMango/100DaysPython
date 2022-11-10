@@ -41,7 +41,6 @@ def PlayGame():
             uAnswer = input("Which has more followers? 'A' or 'B': ").lower()
         if uAnswer == "a":
             result = CorrectAnswer(choice1["follower_count"], choice2["follower_count"])
-            choice1 = choice1
         else:
             result = CorrectAnswer(choice2["follower_count"], choice1["follower_count"])
             choice1 = choice2
