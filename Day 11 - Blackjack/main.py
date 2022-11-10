@@ -1,10 +1,9 @@
-from art import logo
 from random import choice
+from art import logo
 
 def clear():
     for i in range(1000):
         print('\n')
-    return
 
 def CompareScores(uScore: int, cScore: int):
     if uScore == cScore:
@@ -17,11 +16,9 @@ def CompareScores(uScore: int, cScore: int):
         return "You Lose! Your score has gone over 21."
     elif cScore > 21:
         return "You Win! The computer score has gone over 21."
-    else:
-        if cScore > uScore:
-            return "You Lose! The computer has a higher score than you."
-        else:
-            return "You Win!, You have a higher score than the computer."
+    elif cScore > uScore:
+        return "You Lose! The computer has a higher score than you."
+    return "You Win!, You have a higher score than the computer."
 
 def DealCard(deck):
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -33,9 +30,9 @@ def CalculateScore(cards: list):
     if cards[0] == 11 and cards[1] == 10 and len(cards) == 2:
         return 0
     if score > 21 and 11 in cards:
-        for i in range(len(cards)):
-            if cards[i] == 11:
-                cards[i] = 1
+        for i, n in enumerate(cards):
+            if n == 11:
+                n = 1
         score = sum(cards)
     return score
 
@@ -92,13 +89,10 @@ gameStarted = False
 
 if startGame == 'y':
     gameStarted = True
-    while gameStarted == True:
+    while gameStarted:
         clear()
         Blackjack()
         startGame = input("Do you want to play another game of blackjack? Type 'y' or 'n': ").lower()
-        if startGame == 'y':
-            gameStarted = True
-        else:
-            gameStarted = False
+        gameStarted = startGame == 'y'
 else:
     print('Exiting Now!')
