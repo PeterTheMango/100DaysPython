@@ -8,9 +8,9 @@ def clear():
 def CompareScores(uScore: int, cScore: int):
     if uScore == cScore:
         return "It's a Draw!"
-    elif cScore == 0:
+    elif cScore == 21:
         return "You Lose!"
-    elif uScore == 0:
+    elif uScore == 21:
         return "You Win!"
     elif uScore > 21:
         return "You Lose! Your score has gone over 21."
@@ -28,7 +28,7 @@ def DealCard(deck):
 def CalculateScore(cards: list):
     score = sum(cards)
     if cards[0] == 11 and cards[1] == 10 and len(cards) == 2:
-        return 0
+        return 21
     if score > 21 and 11 in cards:
         for i, n in enumerate(cards):
             if n == 11:
