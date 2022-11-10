@@ -7,10 +7,7 @@ def clear():
         print('\n')
 
 def CorrectAnswer(uAnswer: int, sAnswer: int):
-    if uAnswer > sAnswer:
-        return True
-    else:
-        return False
+    return uAnswer > sAnswer       
 
 def PlayGame():
 
