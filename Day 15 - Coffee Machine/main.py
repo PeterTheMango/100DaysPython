@@ -2,11 +2,6 @@ from machine_data import MENU, resources
 
 total_sales = 0
 
-def clear():
-    for i in range(100):
-        print('\n')
-        i = i+1
-
 def CheckMoney(totalMoney, drinkCost):
     if totalMoney >= drinkCost:
         change = round(totalMoney - drinkCost, 2)
