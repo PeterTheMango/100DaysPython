@@ -13,10 +13,10 @@ def CheckMoney(totalMoney, drinkCost):
         global total_sales
         total_sales += drinkCost
         print(f"Your change is ${change}!")
-        return True
     else:
         print("You do not have enough money for this drink. Please collect your money.")
         return False
+    return True
 
 def PromptUser():
     p = input("What would you like? (espresso/latte/cappuccino): ").lower()
